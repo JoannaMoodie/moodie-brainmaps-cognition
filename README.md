@@ -23,5 +23,7 @@ The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to ob
 The spin-based permutation significance test was done using [Alexander Bloch's method](https://github.com/spin-test/spin-test)
 
 ## /data
-- /vertexwise_regional_profiles.csv is a matrix containing the _g_-morphometry profiles 
+- /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles
+- /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles
+- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles 
 
