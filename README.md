@@ -1,7 +1,7 @@
 # moodie-braingradients-cognition
 
 
-This repository contains __ that I wrote in support of the preprint "Neurobiological cortical profiles as spatial correlates of complex cognitive functioning" [available here](). R scripts were run in R version 4.0.2, MATLAB scripts were run in version 2021b. 
+This repository contains scripts and data, in support of the preprint "Neurobiological cortical profiles as spatial correlates of complex cognitive functioning" [available here](). R scripts were run in R version 4.0.2, MATLAB scripts were run in version 2021b. 
 
 Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 
