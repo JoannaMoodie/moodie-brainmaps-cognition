@@ -8,7 +8,7 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 ## /scripts
 ### _g_-morphometry associations
 Scripts: 
-- cohort_brainregion_g_morphometry.m: Requires the [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/)
+- cohort_brainregion_g_morphometry.m: requires the [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/)
 - metaanalysis_brainregion_g_morphometry.R
 
 Data sources: 
