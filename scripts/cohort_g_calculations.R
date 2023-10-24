@@ -54,7 +54,6 @@ GpredictSTRADL <- as.data.frame(GpredictSTRADL)
 GpredictSTRADL$g <- as.numeric(GpredictSTRADL$g)
 
 ######## LBC
-
 LBC <- read.csv("") # this file contains demographic information, and cognitive test scores for each LBC1936 participant.
 theLBCCogdata <- LBC[,1:25]
 LBCcogmodel <- 'g=~matrix_reasoning + block_design + spatial_span_total + NART + WTAR + 
