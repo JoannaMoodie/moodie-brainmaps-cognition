@@ -76,7 +76,6 @@ choice_reaction_time_reflected~ AgeDays + sex
 
 # within-domain covariances
 matrix_reasoning ~~ block_design # visuospatial skills...
-symbol_search ~~ digit_symbol
 matrix_reasoning~~ spatial_span_total
 block_design~~spatial_span_total
 NART~~WTAR # crystalised...
@@ -87,9 +86,10 @@ logical_memory~~digit_span_backward
 logical_memory~~verbal_paired_associates 
 symbol_search~~inspection_time # processing speed...
 symbol_search~~choice_reaction_time_reflected
+symbol_search ~~ digit_symbol
+digit_symbol~~inspection_time
 digit_symbol~~choice_reaction_time_reflected
 inspection_time~~choice_reaction_time_reflected
-digit_symbol~~inspection_time
 '
 
 LBCcogfit <- sem(LBCcogmodel, data=theLBCCogdata, missing = "fiml.x")
