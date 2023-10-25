@@ -1,2 +1,2 @@
 For each of the vertexwise_morphometry[...].csv files, the column order is: 1) Volume, 2) Surface area, 3) Thickness, 4) Curvature, 5) Sulcal depth.
-These vertex-wise cortical maps are in fsaverage space. There are 327684 vertices total, but only 298790 were included in the cortical mask. The 28894 unincluded vertices are coded as NaN. 
+These vertex-wise cortical maps are in fsaverage space. There are 327684 vertices total, but only 298790 were included in the cortical mask (see mask.csv). The 28894 unincluded vertices are coded as NaN. 
