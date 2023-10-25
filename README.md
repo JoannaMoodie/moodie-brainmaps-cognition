@@ -28,7 +28,9 @@ Any additional smoothing was done in surfstat using SurfStatSmooth.m
 The correlations themselves are simply Pearson's _r_ between the relevant pair of maps. 
 
 ## /data
+- /mask.csv is the cortical mask used in vertex-wise analyses
 - /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles
 - /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles
-- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles 
+- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles
+- /SmoothingTolerances_UKB.ppt shows g-morphometry associations in UKB at 9 vertex-wise smoothing tolerances. 
 
