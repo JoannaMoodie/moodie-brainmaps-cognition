@@ -29,8 +29,8 @@ The correlations themselves are simply Pearson's _r_ between the relevant pair o
 
 ## /data
 - /mask.csv is the cortical mask used in vertex-wise analyses
-- /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles (20 mm fwhm)
-- /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles (20 mm fwhm)
-- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles (20 mm fwhm)
+- /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles (20 fwhm)
+- /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles (20 fwhm)
+- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles (20 fwhm)
 - /SmoothingTolerances_UKB.ppt shows g-morphometry associations in UKB at 9 vertex-wise smoothing tolerances. 
 
