@@ -1,4 +1,4 @@
-# vertex-wise meta-analysis
+# vertex-wise meta-analysis example, using g-volume associations. The same script structure was used for all 5 morphometry measures.
 library(robumeta)
 library(metafor)
 
