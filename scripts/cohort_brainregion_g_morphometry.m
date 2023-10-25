@@ -1,6 +1,6 @@
 
 % This is an example script of the vertex-wise _g_ associations, calculated for each cohort.
-$ Comparable scripts were run for all 3 cohorts, and for surface area, thickness, curvature and sulcal depth
+% Comparable scripts were run for all 3 cohorts, and for surface area, thickness, curvature and sulcal depth
 
 addpath('/surfstat')
 avsurf = SurfStatReadSurf( { '~/freesurfer/subjects/fsaverage/surf/lh.pial'...
