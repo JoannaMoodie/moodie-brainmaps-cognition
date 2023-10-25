@@ -1,6 +1,6 @@
 library(lavaan)
-######## UKB
-UKB <- read.csv("") # This file contains demographic information, and the cognitive test results from the 11 tests included to estimate a latent g factor 
+## UKB
+UKB <- read.csv(".csv") # This file contains demographic information, and the cognitive test results from the 11 tests included to estimate a latent g factor 
 UKB$cog_trailB_log[which(UKB$cog_trailB_log == 0)] <- NA # prepare cognitive test data
 UKB$cog_prosmem[which(UKB$cog_prosmem == 2)] <- 0
 UKB$brokenletters_w2[which(UKB$brokenletters_w2 < 20)] <- NA
@@ -33,8 +33,8 @@ GpredictUKB <- cbind(theUKBCogdata$ID, GpredictUKB)
 colnames(GpredictUKB) <- c("ID", "g")
 GpredictUKB <- as.data.frame(GpredictUKB)
 		
-######## STRADL
-STRADL <- read.csv("") # this file contains demographic information, and cognitive test scores for each STRADL participant.  
+## STRADL
+STRADL <- read.csv(".csv") # this file contains demographic information, and cognitive test scores for each STRADL participant.  
 theSTRADLCogdata = data.frame(eid = STRADL$ID, age = STRADL$AgeFaceToFace, sex = STRADL$Sex, assCtr = STRADL$StudySite, mema = STRADL$mema, memdela = STRADL$memdela, digsym = STRADL$digsym, vftot = STRADL$vftot, mhv = STRADL$mhv, mrtotc = STRADL$mrtotc, logmem = STRADL$mema+STRADL$memdela)
 STRADLcogmodel <- 'g =~ digsym + vftot + mhv + mrtotc + logmem 
 digsym~age+sex
@@ -53,8 +53,8 @@ colnames(GpredictSTRADL) <- c("ID", "g")
 GpredictSTRADL <- as.data.frame(GpredictSTRADL)
 GpredictSTRADL$g <- as.numeric(GpredictSTRADL$g)
 
-######## LBC
-LBC <- read.csv("") # this file contains demographic information, and cognitive test scores for each LBC1936 participant.
+## LBC
+LBC <- read.csv(".csv") # this file contains demographic information, and cognitive test scores for each LBC1936 participant.
 theLBCCogdata <- LBC[,1:25]
 LBCcogmodel <- 'g=~matrix_reasoning + block_design + spatial_span_total + NART + WTAR + 
 verbal_fluency+verbal_paired_associates + logical_memory + digit_span_backward +
