@@ -1,4 +1,4 @@
 For each of the vertexwise_morphometry[...].csv files, the column order is: 1) Volume, 2) Surface area, 3) Thickness, 4) Curvature, 5) Sulcal depth.
 PCScores.csv includes the 4 principal components calculated across 33 brain maps.
-PC1_metabolism_fsaverage is the first unrotated component, combining maps of cerebral blood flow, oxygen metabolism and glucose metabolism from [/here] Vaishnavi, S. N., Vlassenko, A. G., Rundle, M. M., Snyder, A. Z., Mintun, M. A., & Raichle, M. E. (2010). Regional aerobic glycolysis in the human brain. Proceedings of the National Academy of Sciences of the United States of America, 107(41), 17757–17762. https://doi.org/10.1073/pnas.1010459107
+PC1_metabolism_fsaverage is the first unrotated component, combining maps of cerebral blood flow, oxygen metabolism and glucose metabolism from Vaishnavi et al., 2010, https://doi.org/10.1073/pnas.1010459107
 These vertex-wise cortical maps are in fsaverage space. There are 327684 vertices total, but the number included in the cortical mask differs slightly between maps. 
