@@ -1,7 +1,6 @@
 # moodie-braingradients-cognition
 
-
-This repository contains scripts and data, in support of the preprint "Neurobiological cortical profiles as spatial correlates of complex cognitive functioning" [available here](). 
+This repository contains scripts and data, in support of the preprint "Brain maps of general cognitive function and spatial correlations with neurobiological cortical profiles" [available here](). 
 
 R scripts were run in R version 4.0.2, MATLAB scripts were run in version 2021b. 
 
@@ -32,5 +31,9 @@ The correlations themselves are simply Pearson's _r_ between the relevant pair o
 - /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles (20 fwhm)
 - /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles (20 fwhm)
 - /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles (20 fwhm)
-- /SmoothingTolerances_UKB.ppt shows g-morphometry associations in UKB at 9 vertex-wise smoothing tolerances. 
+- /SmoothingTolerances_UKB.ppt shows g-morphometry associations in UKB at 9 vertex-wise smoothing tolerances.
+- /Metaanalysed_morphometry_means.csv
+- PC1_metabolism_fsaverage.csv was calculated for the current paper based on CBF, CMRO2 and CMRGlu maps collected by Vaishnavi et al. https://doi.org/10.1073/pnas.1010459107 and provided in [neuromaps](https://github.com/netneurolab/neuromaps).
+- PCScores.csv contains the vertex-wise scores for the 4 PCs calculated with 33 neurobiological profiles in the current paper.
+- vertexwise_allometricscaling_surfacearea.csv contains the estimates of allometric scaling calculated in the current paper (20 fwhm)
 
