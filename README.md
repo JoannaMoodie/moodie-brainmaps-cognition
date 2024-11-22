@@ -1,4 +1,4 @@
-# moodie-braingradients-cognition
+# moodie-brainmaps-cognition
 
 This repository contains scripts and data, in support of the preprint "Brain maps of general cognitive function and spatial correlations with neurobiological cortical profiles" [available here](). 
 
