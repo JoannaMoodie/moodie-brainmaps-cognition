@@ -10,7 +10,7 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 ### _g_-morphometry associations
 Scripts:
 - /cohort_g_calculations.R  # scripts for the g models in SEM for LBC1936, STRADL and UKB. The g scores were extracted from these models, and included in the dataframe that is read in /cohort_brainregion_g_morphometry.m.
-- /cohort_brainregion_g_morphometry.m: requires the [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/)  # an example of the surfstat script to calculate _g_ with vertex-wise-morphometry associations (here, volume and fwhm 20, but comparable scripts were run for all 5 morphometry measures, and all 9 smoothing tolerances. In addition to _g_, age, sex, and measure ~ total surface area "allometric scaling" were calculated by the relevant slight modifications of this script). 
+- /cohort_brainregion_g_morphometry.m: requires the [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/)  # an example of the surfstat script to calculate _g_ with vertex-wise-morphometry associations (here, volume, but comparable scripts were run for all 5 morphometry measures, and all 9 smoothing tolerances. In addition to _g_, age, sex, and measure ~ total surface area "allometric scaling" were calculated by the relevant slight modifications of this script). 
 - /metaanalysis_brainregion_g_morphometry.R  # a meta-analysis was calculated for each vertex to combine the results of the three cohorts. 
 
 Data sources: 
