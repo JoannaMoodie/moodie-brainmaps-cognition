@@ -31,9 +31,9 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 
 ## External repos/toolboxes
 
-The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to obtain cortical profiles for neurotransmitter receptor densities and metabolism. 
-[BigBrainWarp](https://bigbrainwarp.readthedocs.io/en/latest/) contains the microstrucutral, cytoarchitectural and functional connectivity similarity gradients. 
-The [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/) was used to calculate vertex-wise associations and display vertex-wise cortical maps
-The spin-based permutation significance test was done using [Alexander Bloch's method](https://github.com/spin-test/spin-test)
+- The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to obtain cortical profiles for neurotransmitter receptor densities and metabolism. 
+- [BigBrainWarp](https://bigbrainwarp.readthedocs.io/en/latest/) contains the microstrucutral, cytoarchitectural and functional connectivity similarity gradients. 
+- The [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/) was used to calculate vertex-wise associations and display vertex-wise cortical maps
+- The spin-based permutation significance test was done using [Alexander Bloch's method](https://github.com/spin-test/spin-test)
 
 
