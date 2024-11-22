@@ -28,10 +28,6 @@ The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to ob
 
 The spin-based permutation significance test was done using [Alexander Bloch's method](https://github.com/spin-test/spin-test)
 
-Any additional smoothing was done in surfstat using SurfStatSmooth.m
-
-The correlations themselves are simply Pearson's _r_ between the relevant pair of maps. 
-
 stats::prcomp() in R was used for PCA analyses
 
 ## /data
