@@ -2,7 +2,8 @@ For each of the vertexwise_morphometry[...].csv files, the column order is: 1) V
 PCScores.csv includes the 4 principal components calculated across 33 brain maps.
 PC1_metabolism_fsaverage is the first unrotated component, combining maps of cerebral blood flow, oxygen metabolism and glucose metabolism from Vaishnavi et al., 2010, https://doi.org/10.1073/pnas.1010459107
 Metaanalysed_morphometry_means are the mean values for the morphometry measures, meta-analysed across LBC1936, GenScot and UKBiobank samples.
-annot_info.csv
-annot_parc.csv
+annot_info.csv # one of two outputs of scripts/annot_codes.m, required for scripts/regional_spatial_correlations.R, contains 36x6 matrix, regions in rows, first four columns are rgb codes, 5th column is original region code from freesurfer .annot files, 6th column is region name
+annot_parc_327684.csv # one of two outputs of scripts/annot_codes.m, required for scripts/regional_spatial_correlations.R, contains 327684x2 matrix, vertices in rows, the two columns are the region code, and the cortical mask
+mask.csv indexes cortical vertices
 
 These vertex-wise cortical maps are all in fsaverage space. There are 327684 vertices total, but the number included in the cortical mask differs slightly between maps. 
