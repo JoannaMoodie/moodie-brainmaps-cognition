@@ -18,12 +18,16 @@ Data sources:
 
 ### Neurobiological profiles
 
-The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to obtain cortical profiles for neurotransmitter receptor densities and metabolism. [BigBrainWarp](https://bigbrainwarp.readthedocs.io/en/latest/) contains the microstrucutral, cytoarchitectural and functional connectivity similarity gradients. 
+The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to obtain cortical profiles for neurotransmitter receptor densities and metabolism. 
+
+[BigBrainWarp](https://bigbrainwarp.readthedocs.io/en/latest/) contains the microstrucutral, cytoarchitectural and functional connectivity similarity gradients. 
 
 ### Correlations between _g_-morphometry associations and neurobiological profiles
 
 The spin-based permutation significance test was done using [Alexander Bloch's method](https://github.com/spin-test/spin-test)
+
 Any additional smoothing was done in surfstat using SurfStatSmooth.m
+
 The correlations themselves are simply Pearson's _r_ between the relevant pair of maps. 
 
 ## /data
