@@ -12,19 +12,7 @@ theUKBCogdata_models[,c(8)] <- theUKBCogdata_models[,c(8)]/10 # allows variances
 theUKBCogdata_models[,c(7)] <- theUKBCogdata_models[,c(7)]/10
 par(mfrow = c(1, 1))
 UKBcogmodel <- 'g =~cog_RT_log +cog_numeric_memory + cog_fluid_intelligence + cog_trailB_log + cog_matrix_pattern + cog_tower + 
-cog_digsym + cog_pairsmatch_incorrect_log +cog_prosmem +cog_pairedAss + cog_picturevocab
-cog_RT_log ~ ageMRI + sex
-cog_numeric_memory ~ ageMRI + sex
-cog_fluid_intelligence ~ ageMRI + sex
-cog_trailB_log ~ ageMRI + sex 
-cog_matrix_pattern ~ ageMRI + sex
-cog_tower ~ ageMRI + sex
-cog_digsym ~ ageMRI + sex
-cog_pairsmatch_incorrect_log ~ ageMRI + sex
-cog_prosmem ~ ageMRI + sex
-cog_pairedAss ~ ageMRI + sex
-cog_picturevocab ~ ageMRI + sex
-'
+cog_digsym + cog_pairsmatch_incorrect_log +cog_prosmem +cog_pairedAss + cog_picturevocab'
 UKBcogfit <- sem(UKBcogmodel, data=theUKBCogdata_models, missing="fiml.x")
 summary(UKBcogfit, fit.measures=TRUE, standardized=T)
 
@@ -36,12 +24,7 @@ GpredictUKB <- as.data.frame(GpredictUKB)
 ## STRADL
 STRADL <- read.csv(".csv") # this file contains demographic information, and cognitive test scores for each STRADL participant.  
 theSTRADLCogdata = data.frame(eid = STRADL$ID, age = STRADL$AgeFaceToFace, sex = STRADL$Sex, assCtr = STRADL$StudySite, mema = STRADL$mema, memdela = STRADL$memdela, digsym = STRADL$digsym, vftot = STRADL$vftot, mhv = STRADL$mhv, mrtotc = STRADL$mrtotc, logmem = STRADL$mema+STRADL$memdela)
-STRADLcogmodel <- 'g =~ digsym + vftot + mhv + mrtotc + logmem 
-digsym~age+sex
-vftot ~age+sex
-mhv~age+sex
-mrtotc~age+sex
-logmem~age+sex
+STRADLcogmodel <- 'g =~ digsym + vftot + mhv + mrtotc + logmem
 '
 
 STRADLcogfit <- sem(cogmodel, data = theSTRADLCogdata, missing = "fiml.x")
@@ -59,20 +42,6 @@ theLBCCogdata <- LBC[,1:25]
 LBCcogmodel <- 'g=~matrix_reasoning + block_design + spatial_span_total + NART + WTAR + 
 verbal_fluency+verbal_paired_associates + logical_memory + digit_span_backward +
 symbol_search + digit_symbol + inspection_time + choice_reaction_time_reflected 
-
-matrix_reasoning ~ AgeDays + sex
-block_design~ AgeDays + sex
-spatial_span_total~ AgeDays + sex
-NART~ AgeDays + sex
-WTAR ~ AgeDays + sex
-verbal_fluency~ AgeDays + sex
-verbal_paired_associates~ AgeDays + sex
-logical_memory~ AgeDays + sex
-digit_span_backward~ AgeDays + sex
-symbol_search~ AgeDays + sex
-digit_symbol~ AgeDays + sex
-inspection_time~ AgeDays + sex
-choice_reaction_time_reflected~ AgeDays + sex
 
 # within-domain covariances
 matrix_reasoning ~~ block_design # visuospatial skills...
