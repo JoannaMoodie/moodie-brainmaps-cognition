@@ -1,0 +1,102 @@
+# This example script is for g ~ volume and PC correlations, and variable names/indexes were changed accordingly for the different analyses.
+library(scales)
+library(ggpubr)
+library(ggplot2)
+library(dplyr)
+source("https://raw.githubusercontent.com/datavizpyr/data/master/half_flat_violinplot.R")
+
+
+annot_info <- read.csv('/annot_info.csv', header = T) # the code for making these two files in MATLAB is available in scripts/regional_annot_codes.m. The files themselves are in data/regional_annot_codes.csv
+annot_parc <- read.csv('/annot_parc_327684.csv', header = F)
+
+PCs <- read.csv('PC_scores_github.csv', header = T)
+
+# turn the codes in the annot_info file to hex codes for plotting
+head(annot_info)
+annot_info$rgb <- rgb(annot_info[,1:3]/255)
+annot_parc$color <- NA
+annot_parc$region <- NA
+for (i in 1:37) {
+  annot_parc$color[which(annot_parc[,1] == i)] <- annot_info$rgb[i]
+  annot_parc$region[which(annot_parc[,1] == i)] <- annot_info$Var2[i]
+}
+
+GVOL_PC_CORRELATIONS <- matrix(NA, 136, 5) # here this is set to 34*4 (regions*PCs)
+for (i in 1:4) {
+  x = 1 # indexes g ~ volume in current dataset
+  y = i # loops over the 4 PCs
+  
+  plotdata <- data.frame(x = df_scale_rgb[,x], y = PCs[,i], region = df_scale_rgb$region)
+  as.name(colnames(df_scale_rgb)[x])
+  as.name(colnames(PCs)[i])
+  plotdata$region <-  factor(plotdata$region, levels = annot_info$Var2[c(2:4, 6:36)])
+
+  # plot scatterplots coloured by Desikan Killiany region
+  myplot <- ggplot(plotdata, aes(x = x, y = y, color = region, group = region))  + theme_minimal() + geom_point(alpha = .1)+ geom_line(method = "lm", stat = "smooth")+ geom_line(method = "lm", stat = "smooth", color = "black", group = 1, size = 1.8) + scale_color_manual(values = annot_info$rgb[c(2:4, 6:36)]) + labs(subtitle = paste0(as.name(colnames(df_scale_rgb)[x]), ", ", as.name(colnames(PCs)[i]))) + theme(plot.subtitle = element_text(size = 18), legend.position="none", axis.title = element_text(size = 16), axis.text = element_text(size = 14)) +xlab(as.name(colnames(df_scale_rgb)[x])) + ylab (as.name(colnames(PCs)[i]))
+  png(paste0("chartCorrelations/", colnames(df_scale_rgb)[x], "_", colnames(PCs)[i],  ".jpeg"), width = 4000, height = 4000, units = "px", type = "cairo", pointsize = 15, res = 600)
+  print(myplot)
+  dev.off()
+  
+  regions = annot_info$Var2[c(2:4, 6:36)]
+  
+  if (y == 1) {  # the help variable allows the code to loop over the 34 regions 4 times for each PC
+    help = 1 
+    regionindex = 0
+  } else if (y == 2) {
+    help = 35
+    regionindex = 0
+  } else if (y == 3) {
+    help = 69
+    regionindex = 0
+  } else if (y == 4) {
+    help = 103
+    regionindex = 0
+  }
+
+
+  for (k in (help:(help+33))) { 
+    regionindex = regionindex+1
+    if (regionindex > 34) {
+      regionindex = 1
+    }
+    
+    GVOL_PC_CORRELATIONS[k,2] <- cor.test(plotdata$x[which(df_scale_rgb$region == regions[regionindex])], plotdata$y[which(df_scale_rgb$region == regions[regionindex])])$estimate
+    GVOL_PC_CORRELATIONS[k,3] <- cor.test(plotdata$x[which(df_scale_rgb$region == regions[regionindex])], plotdata$y[which(df_scale_rgb$region == regions[regionindex])])$p.value
+    
+    
+    # GVOL_PC_CORRELATIONS[,1] <- c(rep(regions, 4))
+    GVOL_PC_CORRELATIONS<- data.frame(GVOL_PC_CORRELATIONS)
+    GVOL_PC_CORRELATIONS[,c(2,3)] <- sapply(GVOL_PC_CORRELATIONS[,c(2,3)], as.numeric)
+    colnames(GVOL_PC_CORRELATIONS) <- c("region", "r", "p", "x", "y")
+    GVOL_PC_CORRELATIONS 
+    mean(  GVOL_PC_CORRELATIONS$r)
+    GVOL_PC_CORRELATIONS[k,4] <-  colnames(df_scale_rgb)[x]
+    GVOL_PC_CORRELATIONS[k,5] <- colnames(PCs)[i]
+    GVOL_PC_CORRELATIONS[,1] <- rep(regions,4)
+    
+  }
+}
+
+GVOL_PC_CORRELATIONS$region <- factor(GVOL_PC_CORRELATIONS$region, levels = annot_info$Var2[c(2:4, 6:36)])
+write.table(GVOL_PC_CORRELATIONS, 'GVOL_PC_CORRELATIONS.csv', sep = ",", row.names = F)
+
+# barcharts showing regional spatial correlations, coloured by Desikan-Killiany region, for each map comparison
+plot1 <- ggplot(GVOL_PC_CORRELATIONS[grep("PC1", GVOL_PC_CORRELATIONS$y),], aes(x = region, y = r, color = region, fill = region)) + geom_bar(stat = "identity") + theme_minimal() + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),axis.title = element_text(size = 14), axis.text = element_text(size = 10), legend.position = "none", plot.subtitle = element_text(size = 18))+ scale_color_manual(values = annot_info$rgb[c(2:4,6:36)]) + scale_fill_manual(values = annot_info$rgb[c(2:4,6:36)]) +labs(subtitle = paste0(GVOL_PC_CORRELATIONS[grep("PC1", GVOL_PC_CORRELATIONS$y),]$x[1], ", ", GVOL_PC_CORRELATIONS[grep("PC1", GVOL_PC_CORRELATIONS$y),]$y[1])) + coord_flip() + scale_y_continuous(limits = c(-1,1))
+plot2 <- ggplot(GVOL_PC_CORRELATIONS[grep("PC2", GVOL_PC_CORRELATIONS$y),], aes(x = region, y = r, color = region, fill = region)) + geom_bar(stat = "identity") + theme_minimal() + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),axis.title = element_text(size = 14), axis.text = element_text(size = 10), legend.position = "none", plot.subtitle = element_text(size = 18))+ scale_color_manual(values = annot_info$rgb[c(2:4,6:36)]) + scale_fill_manual(values = annot_info$rgb[c(2:4,6:36)]) +labs(subtitle = paste0(GVOL_PC_CORRELATIONS[grep("PC2", GVOL_PC_CORRELATIONS$y),]$x[1], ", ", GVOL_PC_CORRELATIONS[grep("PC2", GVOL_PC_CORRELATIONS$y),]$y[1]))  + coord_flip() + scale_y_continuous(limits = c(-1,1))
+plot3 <- ggplot(GVOL_PC_CORRELATIONS[grep("PC3", GVOL_PC_CORRELATIONS$y),], aes(x = region, y = r, color = region, fill = region)) + geom_bar(stat = "identity") + theme_minimal() + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),axis.title = element_text(size = 14), axis.text = element_text(size = 10), legend.position = "none", plot.subtitle = element_text(size = 18))+ scale_color_manual(values = annot_info$rgb[c(2:4,6:36)]) + scale_fill_manual(values = annot_info$rgb[c(2:4,6:36)]) +labs(subtitle = paste0(GVOL_PC_CORRELATIONS[grep("PC3", GVOL_PC_CORRELATIONS$y),]$x[1], ", ", GVOL_PC_CORRELATIONS[grep("PC3", GVOL_PC_CORRELATIONS$y),]$y[1]))  + coord_flip() + scale_y_continuous(limits = c(-1,1))
+plot4 <- ggplot(GVOL_PC_CORRELATIONS[grep("PC4", GVOL_PC_CORRELATIONS$y),], aes(x = region, y = r, color = region, fill = region)) + geom_bar(stat = "identity") + theme_minimal() + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),axis.title = element_text(size = 14), axis.text = element_text(size = 10), legend.position = "none", plot.subtitle = element_text(size = 18))+ scale_color_manual(values = annot_info$rgb[c(2:4,6:36)]) + scale_fill_manual(values = annot_info$rgb[c(2:4,6:36)]) +labs(subtitle = paste0(GVOL_PC_CORRELATIONS[grep("PC4", GVOL_PC_CORRELATIONS$y),]$x[1], ", ", GVOL_PC_CORRELATIONS[grep("PC4", GVOL_PC_CORRELATIONS$y),]$y[1]))  + coord_flip() + scale_y_continuous(limits = c(-1,1))
+ggarrange(plot1, plot2, plot3, plot4, ncol = 1, nrow = 4)
+ggsave("GVOL_PC_CORRELATIONS.jpeg", height = 20, width  = 6)
+
+# summary of regional spatial correlations for all g ~ volume, PC comparisons
+ggplot(GVOL_PC_CORRELATIONS, aes(x = y, y  = r)) + geom_boxplot(width = .3) + theme_minimal() + geom_hline(yintercept  = 0, linetype = "dotted")
+GVOL_PC_CORRELATIONS$y <- factor(GVOL_PC_CORRELATIONS$y, levels = c("PC4", "PC3", "PC2", "PC1"))
+ggplot(GVOL_PC_CORRELATIONS, aes(x = y, y  = r)) + theme_minimal()+ geom_hline(yintercept  = 0, linetype = "dotted", size = 1) +  geom_flat_violin(position = position_nudge(x = .2, y = 0),adjust =0.5, fill = "black", alpha = .5)+
+  geom_boxplot(
+    width = 0.12,
+    # removing outliers
+    outlier.color = NA,
+    alpha = 1
+  )+ theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5), plot.subtitle = element_text(size = 18), axis.title = element_text(size = 16), axis.text = element_text(size = 14)) + labs(subtitle = "g ~ Volume, PCs") + xlab("PC")+ coord_flip()
+ggsave("GVOL_PC_CORRELATIONS_boxes.jpeg", height = 5, width  = 5)
+
