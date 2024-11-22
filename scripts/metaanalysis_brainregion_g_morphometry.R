@@ -1,8 +1,9 @@
 # vertex-wise meta-analysis example, using g-volume associations. The same script structure was used for all 5 morphometry measures.
+# The inputs to the cohort files had beta, SE and p values for each measure (3x5 = 15 columns), and so were read in as below.
 library(robumeta)
 library(metafor)
 
-mask <- read.csv('/mask.csv', header = F)
+mask <- read.csv('/mask.csv', header = F) # this mask of cortical vertices is included in the data folder.
 
 LBC20 <- read.csv('/LBC1936_fwhm20.csv', sep = ",", header = F)
 LBC20vol <- LBC20[,c(1,2)]
@@ -96,6 +97,7 @@ data$meanage <- as.numeric(data$meanage)
 	res <- rma(ef, va, data = data) 
 	resmod <- rma(ef, va, mods = ~meanage, data = data)
 
+	#main meta-analyses
 	vol_outcomes[i,1] <- as.numeric(res[17]) # q statistic 
 	vol_outcomes[i,2] <- as.numeric(res[18]) # p value for q
 	vol_outcomes[i,3] <- as.numeric(res[13]) # I^2
@@ -106,7 +108,7 @@ data$meanage <- as.numeric(data$meanage)
 	vol_outcomes[i,8] <- as.numeric(res$zval[1]) # z
 	vol_outcomes[i,9] <- as.numeric(res$pval[1]) # p value
 
-
+	# between-cohort age moderation analyses
 	volagemod_outcomes[i,1] <- as.numeric(resmod[17]) # q statistic 
 	volagemod_outcomes[i,2] <- as.numeric(resmod[18]) # p value for q
 	volagemod_outcomes[i,3] <- as.numeric(resmod[13]) # I^2
