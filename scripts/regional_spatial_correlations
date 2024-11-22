@@ -6,10 +6,13 @@ library(dplyr)
 source("https://raw.githubusercontent.com/datavizpyr/data/master/half_flat_violinplot.R")
 
 
+df_scale <- read.csv('df_scale.csv') # this is a dataframe of vertexwise scores for g-morphometry/neurobiological measures (for the current example, it could be 327684*5 (327684 vertices * 5 measures (g ~ volume, PC1, PC2, PC3, PC4).
+df_scale_rgb <- df_scale # create a new variable to have colour codes appended in the current script
+
 annot_info <- read.csv('/annot_info.csv', header = T) # the code for making these two files in MATLAB is available in scripts/regional_annot_codes.m. The files themselves are in data/regional_annot_codes.csv
 annot_parc <- read.csv('/annot_parc_327684.csv', header = F)
 
-PCs <- read.csv('PC_scores_github.csv', header = T)
+PCs <- read.csv('PC_scores.csv', header = T)
 
 # turn the codes in the annot_info file to hex codes for plotting
 head(annot_info)
