@@ -26,14 +26,15 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 - /PCScores.csv contains the vertex-wise scores for the 4 PCs calculated with 33 neurobiological profiles in the current paper.
 - /vertexwise_allometricscaling_surfacearea.csv contains the estimates of allometric scaling calculated in the current paper (20 fwhm)
 
-## Data sources: 
-- Regional g-morphometry profiles (found in /data/vertexwise_regional_profiles.csv) are calculated by meta-analysis with data from 3 cohorts, from which it is possible to request data from: [the UK Biobank](http://www.ukbiobank.ac.uk/register-apply/),  [the STratifying Resilience and Depression Longitudinally (STRADL) study](https://www.research.ed.ac.uk/en/datasets/stratifying-resilience-and-depression-longitudinally-stradl-a-dep) and the [Lothian Birth Cohort 1936](https://www.ed.ac.uk/lothian-birth-cohorts/data-access-collaboration).
-
 ## External repos/toolboxes
 
 - The [neuromaps toolbox](https://github.com/netneurolab/neuromaps) was used to obtain cortical profiles for neurotransmitter receptor densities and metabolism. 
 - [BigBrainWarp](https://bigbrainwarp.readthedocs.io/en/latest/) contains the microstrucutral, cytoarchitectural and functional connectivity similarity gradients. 
 - The [surfstat toolbox](https://www.math.mcgill.ca/keith/surfstat/) was used to calculate vertex-wise associations and display vertex-wise cortical maps
 - The spin-based permutation significance test was done using [Alexander Bloch's method](https://github.com/spin-test/spin-test)
+
+- ## Cohort data sources
+- Regional g-morphometry profiles (found in /data/vertexwise_regional_profiles.csv) are calculated by meta-analysis with data from 3 cohorts, from which it is possible to request data from: [the UK Biobank](http://www.ukbiobank.ac.uk/register-apply/),  [the STratifying Resilience and Depression Longitudinally (STRADL) study](https://www.research.ed.ac.uk/en/datasets/stratifying-resilience-and-depression-longitudinally-stradl-a-dep) and the [Lothian Birth Cohort 1936](https://www.ed.ac.uk/lothian-birth-cohorts/data-access-collaboration).
+
 
 
