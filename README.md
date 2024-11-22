@@ -30,14 +30,18 @@ Any additional smoothing was done in surfstat using SurfStatSmooth.m
 
 The correlations themselves are simply Pearson's _r_ between the relevant pair of maps. 
 
+stats::prcomp() in R was used for PCA analyses
+
 ## /data
-- /mask.csv is the cortical mask used in vertex-wise analyses
-- /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles (20 fwhm)
-- /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles (20 fwhm)
-- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles (20 fwhm)
+- /mask.csv is the cortical mask used in vertex-wise analyses in fsaverage space (298,790  labelled as "cortex")
+- /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles in fsaverage space (20 fwhm)
+- /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles in fsaverage space (20 fwhm)
+- /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles in fsaverage space (20 fwhm)
 - /SmoothingTolerances_UKB.ppt shows g-morphometry associations in UKB at 9 vertex-wise smoothing tolerances.
 - /Metaanalysed_morphometry_means.csv
 - PC1_metabolism_fsaverage.csv was calculated for the current paper based on CBF, CMRO2 and CMRGlu maps collected by Vaishnavi et al. https://doi.org/10.1073/pnas.1010459107 and provided in [neuromaps](https://github.com/netneurolab/neuromaps).
 - PCScores.csv contains the vertex-wise scores for the 4 PCs calculated with 33 neurobiological profiles in the current paper.
 - vertexwise_allometricscaling_surfacearea.csv contains the estimates of allometric scaling calculated in the current paper (20 fwhm)
+
+- Again, please get in touch with me at jmoodie@ed.ac.uk if you have any questions. 
 
