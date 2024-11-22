@@ -43,5 +43,3 @@ stats::prcomp() in R was used for PCA analyses
 - PCScores.csv contains the vertex-wise scores for the 4 PCs calculated with 33 neurobiological profiles in the current paper.
 - vertexwise_allometricscaling_surfacearea.csv contains the estimates of allometric scaling calculated in the current paper (20 fwhm)
 
-- Again, please get in touch with me at jmoodie@ed.ac.uk if you have any questions. 
-
