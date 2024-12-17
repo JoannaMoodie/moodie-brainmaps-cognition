@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/8ec3796d-2a88-435b-bb4f-d486c920e26d)
+
 # moodie-brainmaps-cognition
 
 This repository contains scripts and data, in support of the preprint "Brain maps of general cognitive function and spatial correlations with neurobiological cortical profiles" [available here (not available yet!)](). 
