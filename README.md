@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/8ec3796d-2a88-435b-bb4f-d486c920e26d)
+![image](https://github.com/user-attachments/assets/a5108f92-e724-489d-affd-20760b4d8779)
+
 
 # moodie-brainmaps-cognition
 
@@ -37,6 +38,8 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 
 - ## Cohort data sources
 - Regional g-morphometry profiles (found in /data/vertexwise_regional_profiles.csv) are calculated by meta-analysis with data from 3 cohorts, from which it is possible to request data from: [the UK Biobank](http://www.ukbiobank.ac.uk/register-apply/),  [the STratifying Resilience and Depression Longitudinally (STRADL) study](https://www.research.ed.ac.uk/en/datasets/stratifying-resilience-and-depression-longitudinally-stradl-a-dep) and the [Lothian Birth Cohort 1936](https://www.ed.ac.uk/lothian-birth-cohorts/data-access-collaboration).
+
+
 
 
 
