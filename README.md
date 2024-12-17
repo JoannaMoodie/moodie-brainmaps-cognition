@@ -1,6 +1,3 @@
-![image](https://github.com/user-attachments/assets/a5108f92-e724-489d-affd-20760b4d8779)
-
-
 # moodie-brainmaps-cognition
 
 This repository contains scripts and data, in support of the preprint "Brain maps of general cognitive function and spatial correlations with neurobiological cortical profiles" [available here (not available yet!)](). 
@@ -41,5 +38,5 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 
 
 
-
+![image](https://github.com/user-attachments/assets/a5108f92-e724-489d-affd-20760b4d8779)
 
