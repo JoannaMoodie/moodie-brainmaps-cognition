@@ -14,9 +14,7 @@ Please get in touch with me at jmoodie@ed.ac.uk if you have any questions.
 - /regional_spatial_correlations.R # performs regional spatial corerlations for fsaverage 
 
 ## /data
-- /annot_info.csv # one of two outputs of scripts/annot_codes.m, required for scripts/regional_spatial_correlations.R, contains 36x6 matrix, regions in rows, first four columns are rgb codes, 5th column is original region code from freesurfer .annot files, 6th column is region name
-- /annot_parc_327684.csv # one of two outputs of scripts/annot_codes.m, required for scripts/regional_spatial_correlations.R, contains 327684x2 matrix, vertices in rows, the two columns are the region code, and the cortical mask
-- /mask.csv is the cortical mask used in vertex-wise analyses in fsaverage space (298,790  labelled as "cortex")
+- /mask.csv is the cortical mask used in vertex-wise analyses in fsaverage space (298,790)
 - /vertexwise_morphometry_g.csv is a matrix containing the _g_-morphometry profiles in fsaverage space (20 fwhm)
 - /vertexwise_morphometry_age.csv is a matrix containing the age-morphometry profiles in fsaverage space (20 fwhm)
 - /vertexwise_morphometry_sex.csv is a matrix containing the sex-morphometry profiles in fsaverage space (20 fwhm)
