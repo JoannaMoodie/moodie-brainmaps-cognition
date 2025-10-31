@@ -1,6 +1,6 @@
 # moodie-brainmaps-cognition
 
-This repository contains scripts and data, in support of the preprint "Brain maps of general cognitive function and spatial correlations with neurobiological cortical profiles".
+This repository contains scripts and data, in support of Brain maps of general cognitive functioning: neuroimaging and neurobiological signatures. Transl Psychiatry 15, 461 (2025). https://doi.org/10.1038/s41398-025-03617-8. 
 
 R scripts were run in R version 4.0.2, MATLAB scripts were run in version 2021b. 
 
